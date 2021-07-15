@@ -16,52 +16,6 @@ void setup()
   frameRate(60);
 }
 
-void mousePressed()
-{
-  switch(stat)
-  {
-    case 0:
-    // 口をクリックしたらゲーム画面に移る
-    if(514 < mouseX && mouseX < 737 && 436 < mouseY && mouseY < 642)
-    {
-      if(( y2[0] > 635 ) & ( y2[1] > 635 ))
-      {
-        reset();
-      } else
-      {
-        stat = 1;
-      }
-    }
-    break;
-  
-    // TITLEをクリックするとタイトルに戻る
-    case 1:
-    if(1103 < mouseX && mouseX < 1214 && 642 < mouseY && mouseY < 684)
-    {
-      stat = 0;  
-    }
-    
-    // RETRYをクリックすると再スタート
-    if(34 < mouseX && mouseX < 146 && 642 < mouseY && mouseY < 684)
-    {      
-      reset();
-    }
-    break;
-  }
-}
-
-void reset()
-{
-  if (count2 < count) {
-    count2 = count;
-  }
-  count = 0;
-  speed[0] = 1;
-  speed[1] = 1;
-  y2[0] = -180;
-  y2[1] = -60;
-}  
-
 void draw()
 {
   switch(stat)
@@ -611,3 +565,49 @@ void draw()
   stroke(0);
   
 }
+
+void mousePressed()
+{
+  switch(stat)
+  {
+    case 0:
+    // 口をクリックしたらゲーム画面に移る
+    if(514 < mouseX && mouseX < 737 && 436 < mouseY && mouseY < 642)
+    {
+      if(( y2[0] > 635 ) & ( y2[1] > 635 ))
+      {
+        reset();
+      } else
+      {
+        stat = 1;
+      }
+    }
+    break;
+  
+    // TITLEをクリックするとタイトルに戻る
+    case 1:
+    if(1103 < mouseX && mouseX < 1214 && 642 < mouseY && mouseY < 684)
+    {
+      stat = 0;  
+    }
+    
+    // RETRYをクリックすると再スタート
+    if(34 < mouseX && mouseX < 146 && 642 < mouseY && mouseY < 684)
+    {      
+      reset();
+    }
+    break;
+  }
+}
+
+void reset()
+{
+  if (count2 < count) {
+    count2 = count;
+  }
+  count = 0;
+  speed[0] = 1;
+  speed[1] = 1;
+  y2[0] = -180;
+  y2[1] = -60;
+}  
